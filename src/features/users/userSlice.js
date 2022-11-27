@@ -7,7 +7,7 @@ const userSlice = createSlice({
   initialState,
   reducers: {
     addUser: (state, action) => {
-      state.push(action.payload);
+      state.unshift(action.payload);
     },
     editUser: (state, action) => {
       const { id, name, email } = action.payload;
