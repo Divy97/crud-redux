@@ -9,6 +9,7 @@ const TextField = ({ label, inputProps, onChange, value }) => {
         {...inputProps}
         onChange={onChange}
         value={value}
+        required
       />
     </div>
   );

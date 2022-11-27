@@ -3,6 +3,8 @@ import { Routes, Route } from "react-router-dom";
 
 import UserList from "./features/users/UserList";
 import AddUser from "./features/users/AddUser";
+import EditUser from "./features/users/EditUser";
+import DeleteUser from "./features/users/DeleteUser";
 
 import "./App.css";
 
@@ -15,6 +17,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<UserList />} />
         <Route path="/addUser" element={<AddUser />} />
+        <Route path="/editUser/:id" element={<EditUser />} />
+        <Route path="/deleteUser" element={<DeleteUser />} />
       </Routes>
     </div>
   );
