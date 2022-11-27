@@ -1,6 +1,10 @@
 import React from "react";
-import "./App.css";
+import { Routes, Route } from "react-router-dom";
+
 import UserList from "./features/users/UserList";
+import AddUser from "./features/users/AddUser";
+
+import "./App.css";
 
 const App = () => {
   return (
@@ -8,7 +12,10 @@ const App = () => {
       <h1 className="text-center font-bold text-2xl text-gray-700">
         CRUD WITH REDUX
       </h1>
-      <UserList />
+      <Routes>
+        <Route path="/" element={<UserList />} />
+        <Route path="/addUser" element={<AddUser />} />
+      </Routes>
     </div>
   );
 };
