@@ -1,18 +1,28 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { useDispatch } from "react-redux";
+import { addUser } from "./userSlice";
+import { v4 as uuidv4 } from "uuid";
 import Button from "../../components/Button";
 import TextField from "../../components/TextField";
 
 const AddUser = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const [values, setValues] = useState({
     name: "",
     email: "",
   });
 
   const handleAddUser = () => {
-    console.log(values);
+    dispatch(
+      addUser({
+        id: uuidv4(),
+        name: values.name,
+        email: values.email,
+      })
+    );
 
     setValues({
       name: "",

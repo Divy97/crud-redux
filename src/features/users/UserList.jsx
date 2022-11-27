@@ -1,19 +1,9 @@
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import Button from "../../components/Button";
 
 const UserList = () => {
-  const users = [
-    {
-      id: "1",
-      name: "Divy",
-      email: "divy@gmail.com",
-    },
-    {
-      id: "2",
-      name: "Divy2",
-      email: "divy2@gmail.com",
-    },
-  ];
+  const users = useSelector((store) => store.users);
 
   const renderCard = () =>
     users.map((user) => (
